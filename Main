@@ -1,0 +1,18 @@
+#define _XTAL_FREQ 16000000
+
+#define __PIC18F45k50__
+
+#include "ADC_Lib.h"
+#include <xc.h>
+
+void main(void) {
+    
+    
+    TRISA=0x04;
+    //set channel 2 as an input
+    // Configure AN2 as an analog channel
+    TRISAbits.TRISA2=1;                     //Set RA2 to input
+    ANSELAbits.ANSA2=1;						//Set RA2 to analog
+    ADC_Lib();
+
+}
